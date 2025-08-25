@@ -555,7 +555,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
-        flex: 0 0 50vh;
+        flex: 0 0 40vh; /* Reduced for mobile */
         padding: 5px 0;
       }
       .score-app-content .player {
@@ -570,15 +570,17 @@
         max-height: 100px;
       }
       .score-app-content .input-section {
-        flex: 0 0 50vh;
+        flex: 1;
         justify-content: flex-start;
+        overflow-y: auto; /* Scroll if keypad/buttons overflow */
+        padding-bottom: 20px; /* Extra space at bottom */
       }
       .score-app-content .keypad-controls button,
       .score-app-content .keypad button,
       .score-app-content .action-buttons button {
-        padding: 15px;
+        padding: 10px; /* Reduced for mobile fit */
         font-size: 1.2em;
-        min-width: 90px;
+        min-width: 70px;
       }
       .bracket {
         margin: 20px auto;
@@ -640,19 +642,19 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>Matt</td><td>504</td></tr>
-          <tr><td>Greg</td><td>492</td></tr>
-          <tr><td>Doug</td><td>425</td></tr>
-          <tr><td>Dean</td><td>415</td></tr>
-          <tr><td>Rob</td><td>324</td></tr>
-          <tr><td>Ryan</td><td>320</td></tr>
-          <tr><td>Colten</td><td>316</td></tr>
-          <tr><td>Bry</td><td>234</td></tr>
-          <tr><td>Mike</td><td>234</td></tr>
-          <tr><td>Connor</td><td>231</td></tr>
-          <tr><td>Spencer</td><td>231</td></tr>
-          <tr><td>Jeremy</td><td>152</td></tr>
-          <tr><td>Branden</td><td>150</td></tr>
+          <tr><td>Matt</td><td>0</td></tr>
+          <tr><td>Greg</td><td>0</td></tr>
+          <tr><td>Doug</td><td>0</td></tr>
+          <tr><td>Dean</td><td>0</td></tr>
+          <tr><td>Rob</td><td>0</td></tr>
+          <tr><td>Ryan</td><td>0</td></tr>
+          <tr><td>Colten</td><td>0</td></tr>
+          <tr><td>Bry</td><td>0</td></tr>
+          <tr><td>Mike</td><td>0</td></tr>
+          <tr><td>Connor</td><td>0</td></tr>
+          <tr><td>Spencer</td><td>0</td></tr>
+          <tr><td>Jeremy</td><td>0</td></tr>
+          <tr><td>Branden</td><td>0</td></tr>
         </tbody>
       </table>
     </div>
