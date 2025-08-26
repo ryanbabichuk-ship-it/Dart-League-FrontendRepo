@@ -206,7 +206,7 @@
       display: flex;
       justify-content: space-around;
       width: 100%;
-      flex: 0 0 50vh;
+      flex: 0 0 40vh; /* Reduced for mobile to leave more room for input */
       overflow-y: hidden;
       padding: 10px 0;
     }
@@ -254,10 +254,12 @@
       padding: 10px 0;
       background-color: rgba(0, 0, 0, 0.2);
       border-top: 1px solid #FFD700;
-      flex: 0 0 50vh;
+      flex: 1; /* Flexible to take remaining space */
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
+      overflow-y: auto; /* Allow scrolling if needed */
+      min-height: 0; /* Ensure flex child can shrink */
     }
     .score-app-content #scoreInput {
       font-size: 1.8em;
@@ -283,7 +285,7 @@
     .score-app-content .keypad button,
     .score-app-content .action-buttons button {
       font-size: 1.4em;
-      padding: 12px;
+      padding: 10px; /* Reduced padding for mobile fit */
       background: linear-gradient(to bottom, #FFD700, #e6c200);
       color: #4A7043;
       border: none;
@@ -313,6 +315,7 @@
       margin-top: 10px;
       width: 90%;
       margin: 10px auto 0;
+      padding-bottom: 20px; /* Extra space at bottom for visibility */
     }
     .score-app-content .action-buttons button {
       flex: 1;
@@ -555,7 +558,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
-        flex: 0 0 40vh; /* Reduced for mobile */
+        flex: 0 0 40vh;
         padding: 5px 0;
       }
       .score-app-content .player {
@@ -572,13 +575,13 @@
       .score-app-content .input-section {
         flex: 1;
         justify-content: flex-start;
-        overflow-y: auto; /* Scroll if keypad/buttons overflow */
-        padding-bottom: 20px; /* Extra space at bottom */
+        overflow-y: auto;
+        padding-bottom: 20px;
       }
       .score-app-content .keypad-controls button,
       .score-app-content .keypad button,
       .score-app-content .action-buttons button {
-        padding: 10px; /* Reduced for mobile fit */
+        padding: 10px;
         font-size: 1.2em;
         min-width: 70px;
       }
@@ -1082,7 +1085,7 @@
 
       async function fetchPlayerStats() {
         try {
-          const response = await fetch('https://dart-league-backend-8qlbyle11-brys-projects-719cd7a0.vercel.app/api/player-stats');
+          const response = await fetch('https://dart-league-backend-lzakzdc65-brys-projects-719cd7a0.vercel.app/api/player-stats');
           if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
           const stats = await response.json();
           console.log('Fetched player stats:', stats);
@@ -1186,7 +1189,7 @@
         localStorage.setItem('dartGames', JSON.stringify(savedGames));
 
         try {
-          const response = await fetch('https://dart-league-backend-8qlbyle11-brys-projects-719cd7a0.vercel.app/api/games', {
+          const response = await fetch('https://dart-league-backend-lzakzdc65-brys-projects-719cd7a0.vercel.app/api/games', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
